@@ -6,12 +6,12 @@ use tap::Tap;
 use url::Url;
 
 #[derive(Serialize, Debug)]
-pub struct Nanoid(String);
+pub struct Nanoid<const N: usize = 21>(String);
 
-impl Dummy<Faker> for Nanoid {
+impl<const N: usize> Dummy<Faker> for Nanoid<N> {
 	fn dummy_with_rng<R>(_config: &Faker, _rng: &mut R) -> Self
 	where R: rand::Rng + ?Sized {
-		Nanoid(nanoid!())
+		Self(nanoid!(N))
 	}
 }
 
