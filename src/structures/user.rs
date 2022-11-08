@@ -10,7 +10,7 @@ use crate::dummy::{GravataUrl, Nanoid};
 const WEEKS: i64 = 12;
 
 #[derive(Serialize, Debug, Dummy)]
-#[serde(rename(serialize = "camelCase"))]
+#[serde(rename_all(serialize = "camelCase"))]
 pub struct User {
 	id: Nanoid,
 

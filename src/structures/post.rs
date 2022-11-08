@@ -14,7 +14,7 @@ use crate::{dummy::Nanoid, utils::join_string};
 const WEEKS: i64 = 12;
 
 #[derive(Serialize, Debug, Dummy)]
-#[serde(rename(serialize = "camelCase"))]
+#[serde(rename_all(serialize = "camelCase"))]
 pub struct Post {
 	id: Nanoid,
 
