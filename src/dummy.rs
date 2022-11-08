@@ -1,4 +1,4 @@
-use fake::{faker::internet::raw::FreeEmail, locales::EN, Dummy, Fake, Faker};
+use fake::{faker::internet::en::FreeEmail, Dummy, Fake, Faker};
 use lazy_static::lazy_static;
 use nanoid::nanoid;
 use serde::Serialize;
@@ -32,7 +32,7 @@ impl Dummy<Faker> for GravataUrl {
 			GRAVATA_BASE_URL
 				.join(&format!(
 					"{:x}",
-					md5::compute(FreeEmail(EN).fake::<String>())
+					md5::compute(FreeEmail().fake::<String>())
 				))
 				.expect("Can't join hashed email to gravatar base url")
 				.tap_mut(|u| {

@@ -1,7 +1,6 @@
 use chrono::{DateTime, Utc};
 use fake::{
-	faker::{chrono::raw::DateTime as FakeDateTime, name::raw::Name},
-	locales::EN,
+	faker::{chrono::en::DateTime as FakeDateTime, name::en::Name},
 	Dummy, Fake,
 };
 use serde::Serialize;
@@ -16,10 +15,10 @@ use crate::{
 pub struct User {
 	id: Nanoid,
 
-	#[dummy(faker = "Name(EN)")]
+	#[dummy(faker = "Name()")]
 	name: String,
 
-	#[dummy(faker = "FakeDateTime(EN)")]
+	#[dummy(faker = "FakeDateTime()")]
 	#[serde(serialize_with = "to_timestamp")]
 	created_at: DateTime<Utc>,
 
