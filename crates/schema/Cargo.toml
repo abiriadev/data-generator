@@ -1,0 +1,26 @@
+[package]
+	edition.workspace = true
+	name              = "schema"
+	version.workspace = true
+
+[dependencies]
+	chrono = { version = "0.4.22", features = [
+		"serde",
+		"unstable-locales",
+	] }
+	fake = { version = "2.5.0", features = [
+		"chrono",
+		"derive",
+	] }
+	lazy_static = "1.4.0"
+	md5 = "0.7.0"
+	nanoid = "0.4.0"
+	rand = "0.8.5"
+	serde = { version = "1.0.147", features = [
+		"derive",
+	] }
+	serde_json.workspace = true
+	tap = "1.0.1"
+	url = { version = "2.3.1", features = [
+		"serde",
+	] }

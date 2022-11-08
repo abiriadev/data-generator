@@ -1,4 +1,4 @@
-use data_generator::{structures::post::Post, utils::generate_n_times};
+use schema::{structures::post::Post, utils::generate_n_times};
 
 const LENGTH: usize = 5;
 

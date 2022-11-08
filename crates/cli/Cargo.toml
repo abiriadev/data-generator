@@ -1,0 +1,8 @@
+[package]
+	edition.workspace = true
+	name              = "cli"
+	version.workspace = true
+
+[dependencies]
+	schema               = { path = "../schema" }
+	serde_json.workspace = true
