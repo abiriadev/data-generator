@@ -21,7 +21,7 @@ pub struct GravataUrl(Url);
 impl Dummy<Faker> for GravataUrl {
 	fn dummy_with_rng<R>(_config: &Faker, _rng: &mut R) -> Self
 	where R: rand::Rng + ?Sized {
-		const GRAVATA_BASE: &'static str = "https://gravatar.com/avatar/";
+		const GRAVATA_BASE: &str = "https://gravatar.com/avatar/";
 
 		lazy_static! {
 			static ref GRAVATA_BASE_URL: Url = Url::parse(GRAVATA_BASE)

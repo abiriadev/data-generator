@@ -1,0 +1,9 @@
+[formatting]
+	align_entries       = true
+	allowed_blank_lines = 1
+	column_width        = 40
+	indent_entries      = true
+	indent_string       = '	'
+	indent_tables       = true
+	reorder_arrays      = true
+	reorder_keys        = true

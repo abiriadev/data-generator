@@ -1,0 +1,22 @@
+repos:
+  - repo: https://github.com/doublify/pre-commit-rust
+    rev: v1.0
+    hooks:
+      - id: fmt
+        args:
+          - '--'
+          - '--error-on-unformatted'
+          - '--unstable-features'
+      - id: cargo-check
+      - id: clippy
+  - repo: local
+    hooks:
+      - id: fmt
+        name: Taplo formatting
+        entry: taplo format
+        description: format all toml files
+        args:
+          - '--verbose'
+          - '--diff'
+        language: system
+fail_fast: true
