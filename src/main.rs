@@ -1,13 +1,6 @@
-use fake::{faker::name::raw::Name, locales::EN, Dummy, Fake};
-use serde::Serialize;
+use data_generator::structures::User;
 
 const LENGTH: usize = 5;
-
-#[derive(Serialize, Debug, Dummy)]
-struct User {
-	#[dummy(faker = "Name(EN)")]
-	name: String,
-}
 
 fn main() -> Result<(), serde_json::Error> {
 	Ok(fake::vec![User; LENGTH]
