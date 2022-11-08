@@ -6,7 +6,10 @@ use fake::{
 };
 use serde::Serialize;
 
-use crate::{dummy::Nanoid, utils::to_timestamp};
+use crate::{
+	dummy::{GravataUrl, Nanoid},
+	utils::to_timestamp,
+};
 
 #[derive(Serialize, Debug, Dummy)]
 #[serde(rename(serialize = "camelCase"))]
@@ -19,4 +22,6 @@ pub struct User {
 	#[dummy(faker = "FakeDateTime(EN)")]
 	#[serde(serialize_with = "to_timestamp")]
 	created_at: DateTime<Utc>,
+
+	profile: GravataUrl,
 }
